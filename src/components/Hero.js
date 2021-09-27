@@ -3,6 +3,9 @@ import { useContext, useRef } from "react";
 import { CVContext } from "../CVContext";
 import missingProfile from "../images/addProfileImg.jpg";
 import "../styles/Hero.style.css";
+import Inputs from "../inputType";
+
+import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaLinkedin, FaGithub } from "react-icons/fa";
 
 const Hero = () => {
   const { preview, cvInfo, setCVInfo } = useContext(CVContext);
@@ -51,28 +54,43 @@ const Hero = () => {
           />
           <img src={missingProfile} alt="Profile" ref={previewImg} onClick={selectFile} />
         </div>
-        <div className="name">
-          <label htmlFor="name">Name:</label>
-          <input
-            type="text"
-            name="name"
-            id="name"
-            value={cvInfo.name}
-            onChange={(e) => setCVInfo({ ...cvInfo, name: e.target.value })}
-          />
-        </div>
-        <div className="title">
-          <label htmlFor="title">Job Title:</label>
-          <input
-            type="text"
-            name="title"
-            id="title"
-            value={cvInfo.title}
-            onChange={(e) => setCVInfo({ ...cvInfo, title: e.target.value })}
-          />
+        <div className="user-info">
+          <div className="name">
+            <label htmlFor="name">Name:</label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Enter your Name"
+              value={cvInfo.name}
+              onChange={(e) => setCVInfo({ ...cvInfo, name: e.target.value })}
+            />
+          </div>
+          <div className="title">
+            <label htmlFor="title">Job Title:</label>
+            <input
+              type="text"
+              name="title"
+              id="title"
+              placeholder="Enter your Job Title"
+              value={cvInfo.title}
+              onChange={(e) => setCVInfo({ ...cvInfo, title: e.target.value })}
+            />
+          </div>
         </div>
         <div className="contact-info">
-          
+          {Inputs.map((input, idx) => (
+            <div className={`contactInput ${input.type}`} key={idx}>
+              {input.icon}
+              <input
+                type="text"
+                name={input.type}
+                placeholder={input.placeholder}
+                value={cvInfo[input.type]}
+                onChange={(e) => setCVInfo({ ...cvInfo, [input.type]: e.target.value })}
+              />
+            </div>
+          ))}
         </div>
       </div>
     );
