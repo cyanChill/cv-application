@@ -1,0 +1,46 @@
+.experience-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.experience {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.row .text,
+.row .dates {
+  display: flex;
+  flex-direction: column;
+}
+
+.row .text {
+  flex: 1;
+}
+
+.row .description-field {
+  flex: 1;
+  resize: none;
+}
+
+@media (max-width: 400px) {
+  .row {
+    flex-direction: column;
+  }
+
+  .row.no-responsiveness {
+    flex-direction: row;
+  }
+
+  .row .text,
+  .row .dates {
+    width: 100%;
+  }
+}
