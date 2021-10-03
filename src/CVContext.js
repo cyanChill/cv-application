@@ -1,4 +1,5 @@
 import { useState, createContext } from "react";
+import uniqid from "uniqid";
 
 export const CVContext = createContext();
 
@@ -8,6 +9,37 @@ export const CVProvider = (props) => {
     name: "",
     title: "",
     img: null,
+    location: "",
+    phone: "",
+    email: "",
+    linkedin: "",
+    github: "",
+    skills: [
+      {
+        name: "",
+        rating: 5,
+        id: uniqid(),
+      },
+    ],
+    education: [
+      {
+        school: "",
+        degree: "",
+        startDate: "",
+        endDate: "",
+        id: uniqid(),
+      },
+    ],
+    experience: [
+      {
+        title: "",
+        company: "",
+        description: '',
+        startDate: "",
+        endDate: "",
+        id: uniqid(),
+      },
+    ],
   });
 
   return (
