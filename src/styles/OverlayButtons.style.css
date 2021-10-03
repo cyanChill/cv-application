@@ -1,0 +1,33 @@
+.overlay {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  background: var(--clr-main-var, white);
+  border-radius: 50%;
+  margin: 1rem;
+}
+
+.overlay:hover {
+  background: var(--clr-hover-var, white);
+}
+
+.overlay-icon {
+  width: clamp(1.5rem, 7vw, 2rem);
+  height: clamp(1.5rem, 7vw, 2rem);
+}
+
+.overlay.preview {
+  --clr-main-var: rgb(155, 155, 255);
+  --clr-hover-var: rgb(125, 125, 253);
+  bottom: 0;
+  right: 0;
+}
+
+.overlay.download {
+  --clr-main-var: rgb(155, 255, 193);
+  --clr-hover-var: rgb(119, 253, 170);
+  bottom: 0;
+  left: 0;
+}
