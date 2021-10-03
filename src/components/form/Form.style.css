@@ -4,12 +4,67 @@
 }
 
 .container {
-  max-width: 62.5rem;
+  max-width: 68rem;
+}
+
+.section-title {
+  margin: 0.5rem 0;
+}
+
+.row-1,
+.row-2,
+.row-3,
+.row-4 {
+  margin: 0.5rem 0;
+}
+
+/* Input Field Stylings */
+input,
+textarea {
+  border: 1px solid black;
+  border-radius: 3px;
+  padding: 0.5rem 1rem;
+}
+
+input[type="number"] {
+  width: 4rem;
+}
+
+/* Button styling */
+.btn {
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border: none;
+  outline: none;
+  border-radius: 3px;
+  background: rgba(163, 237, 247, 0.3);
+}
+
+.btn:hover {
+  background: rgba(163, 237, 247, 0.7);
+  font-weight: bold;
+}
+
+/* Delete/Trash Button */
+.trash {
+  cursor: pointer;
+  align-self: center;
+}
+
+.trash:hover {
+  color: red;
 }
 
 /* First row */
 .row-1 {
   gap: 0.5rem;
+}
+
+.contact-input {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.25rem 0;
 }
 
 /* Profile Related */
@@ -23,6 +78,7 @@
   height: 10em;
   width: 10em;
   object-fit: cover;
+  border-radius: 50%;
 }
 
 .user-info {
@@ -51,7 +107,7 @@
   margin: 0.25rem;
 }
 
-@media (min-width: 625px) {
+@media (min-width: 650px) {
   .row-1 {
     flex-direction: row;
   }
@@ -64,115 +120,89 @@
 /* Row 2*/
 .skills-list {
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
 }
 
-.skills-list .skill,
-.skills-list .skill .rating {
+.skill,
+.skill .rating {
   display: flex;
   align-items: center;
 }
 
-.skills-list .skill > *,
-.skills-list .skill .rating > * {
+.skill > *,
+.skill .rating > * {
   margin: 0.25rem;
 }
 
-@media (max-width: 360px) {
-  .skills-list .skill {
+@media (max-width: 400px) {
+  .skill {
+    width: 100%;
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .skill .skill-field {
+    width: 100%;
+  }
+
+  .skill .rating {
+    align-self: flex-end;
   }
 }
 
 /* Row 3 */
-.experience-list {
-  display: flex;
-  flex-direction: column;
-}
-
-.experience {
-  display: flex;
-  flex-direction: column;
-}
-
-.row {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.row .text,
-.row .dates {
-  display: flex;
-  flex-direction: column;
-}
-
-.row .text {
-  flex: 1;
-}
-
-.row .description-field {
+.description-field {
   flex: 1;
   resize: none;
 }
 
-@media (max-width: 400px) {
-  .row {
-    flex-direction: column;
-  }
-
-  .row.no-responsiveness {
-    flex-direction: row;
-  }
-
-  .row .text,
-  .row .dates {
-    width: 100%;
-  }
-}
-
 /* Row 4 */
-.school-list {
-  display: flex;
-  flex-direction: column;
-}
 
+/* Shared Between Row 3 & 4 */
+.job,
 .school {
   display: flex;
-  flex-direction: column;
-}
-
-.row {
-  display: flex;
-  flex-direction: row;
   align-items: center;
   gap: 0.5rem;
 }
 
-.row .text,
-.row .dates {
-  display: flex;
-  flex-direction: column;
-}
-
-.row .text {
+.text {
   flex: 1;
 }
 
-.school .trash {
-  align-self: flex-end;
+.text > * {
+  margin: 0.25rem;
 }
 
-@media (max-width: 400px) {
-  .row {
+.dates > input {
+  margin: 0.25rem;
+}
+
+.job .trash,
+.school .trash {
+  text-align: center;
+  width: 100%;
+  background: rgba(255, 124, 124, 0.45);
+  padding: 0.5rem 1rem;
+  margin: 0.25rem;
+  border-radius: 3px;
+}
+
+.job .trash:hover,
+.school .trash:hover {
+  background: rgba(241, 72, 72, 0.63);
+  color: white;
+  font-weight: bold;
+}
+
+@media (max-width: 450px) {
+  .job,
+  .school {
     flex-direction: column;
   }
 
-  .row .text,
-  .row .dates {
+  .text,
+  .dates {
     width: 100%;
   }
 }

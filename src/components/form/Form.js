@@ -133,7 +133,7 @@ const Form = () => {
         {/* Profile contact information */}
         <div className="contact-info flex-col">
           {Inputs.map((input, idx) => (
-            <div className={`contactInput ${input.type}`} key={idx}>
+            <div className={`contact-input ${input.type}`} key={idx}>
               {input.icon}
               <input
                 type="text"
@@ -148,32 +148,38 @@ const Form = () => {
       </div>
 
       <div className="row-2">
-        <h2>Skills:</h2>
+        <h2 className="section-title">Skills:</h2>
         <div className="skills-list">
           {cvInfo.skills.map((skill) => (
             <Skill key={skill.id} skill={skill} deleteSkill={deleteSkill} />
           ))}
         </div>
-        <button onClick={addSkill}>Add More</button>
+        <button onClick={addSkill} className="btn">
+          Add More
+        </button>
       </div>
 
       <div className="row-3">
-        <h2>Experience:</h2>
-        <div className="experience-list">
+        <h2 className="section-title">Experience:</h2>
+        <div className="experience-list flex-col">
           {cvInfo.experience.map((job) => (
             <Job key={job.id} experience={job} deleteJob={deleteJob} />
           ))}
-          <button onClick={addJob}>Add More</button>
+          <button onClick={addJob} className="btn">
+            Add More
+          </button>
         </div>
       </div>
 
       <div className="row-4">
-        <h2>Education:</h2>
-        <div className="school-list">
+        <h2 className="section-title">Education:</h2>
+        <div className="school-list flex-col">
           {cvInfo.education.map((school) => (
             <School key={school.id} education={school} deleteSchool={deleteSchool} />
           ))}
-          <button onClick={addSchool}>Add More</button>
+          <button onClick={addSchool} className="btn">
+            Add More
+          </button>
         </div>
       </div>
     </div>
