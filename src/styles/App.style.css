@@ -1,0 +1,23 @@
+:root {
+  --application-padding: 1rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.app {
+  display: flex;
+  justify-content: center;
+}
+
+.app > * {
+  padding: var(--application-padding);
+  flex: 1;
+}
