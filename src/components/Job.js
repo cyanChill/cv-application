@@ -24,34 +24,35 @@ const Job = ({ deleteJob, experience }) => {
 
   return (
     <div className="job">
-      <div className="row">
-        <div className="text">
-          <input
-            type="text"
-            placeholder="Job Title"
-            value={title}
-            onChange={(e) => updateField(e, "title")}
-          />
-          <input
-            type="text"
-            placeholder="Company Name"
-            value={company}
-            onChange={(e) => updateField(e, "company")}
-          />
-          <textarea
-            className="description-field"
-            rows="2"
-            value={description}
-            onChange={(e) => updateField(e, "description")}
-          ></textarea>
-        </div>
-        <div className="dates">
-          <span className="field-title">Start Date:</span>
-          <input type="date" value={startDate} onChange={(e) => updateField(e, "startDate")} />
-          <span className="field-title">End Date:</span>
-          <input type="date" value={endDate} onChange={(e) => updateField(e, "endDate")} />
-          <FaTrash onClick={() => deleteJob(id)} />
-        </div>
+      <div className="text flex-col">
+        <input
+          type="text"
+          placeholder="Job Title"
+          value={title}
+          onChange={(e) => updateField(e, "title")}
+        />
+        <input
+          type="text"
+          placeholder="Company Name"
+          value={company}
+          onChange={(e) => updateField(e, "company")}
+        />
+        <textarea
+          className="description-field"
+          placeholder="Job Description"
+          rows="2"
+          value={description}
+          onChange={(e) => updateField(e, "description")}
+        ></textarea>
+      </div>
+      <div className="dates flex-col">
+        <span className="field-title">Start Date:</span>
+        <input type="date" value={startDate} onChange={(e) => updateField(e, "startDate")} />
+        <span className="field-title">End Date:</span>
+        <input type="date" value={endDate} onChange={(e) => updateField(e, "endDate")} />
+        <button className="btn trash" onClick={() => deleteJob(id)}>
+          Delete
+        </button>
       </div>
     </div>
   );

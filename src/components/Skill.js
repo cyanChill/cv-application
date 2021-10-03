@@ -38,14 +38,18 @@ const Skill = ({ deleteSkill, skill }) => {
   };
 
   return (
-    <div>
-      <div className="skill">
-        <input type="text" placeholder="Skill Name" value={name} onChange={updateSkill} />
-        <div className="rating">
-          <input type="number" min="0" max="10" value={rating} onChange={updateRating} />
-          <span>/ 10</span>
-          <FaTrash onClick={() => deleteSkill(id)} />
-        </div>
+    <div className="skill">
+      <input
+        type="text"
+        className="skill-field"
+        placeholder="Skill Name"
+        value={name}
+        onChange={updateSkill}
+      />
+      <div className="rating">
+        <input type="number" min="0" max="10" value={rating} onChange={updateRating} />
+        <span>/ 10</span>
+        <FaTrash onClick={() => deleteSkill(id)} className="trash" />
       </div>
     </div>
   );

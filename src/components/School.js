@@ -24,28 +24,28 @@ const School = ({ deleteSchool, education }) => {
 
   return (
     <div className="school">
-      <div className="row">
-        <div className="text">
-          <input
-            type="text"
-            placeholder="School Name"
-            value={school}
-            onChange={(e) => updateField(e, "school")}
-          />
-          <input
-            type="text"
-            placeholder="Degree Name"
-            value={degree}
-            onChange={(e) => updateField(e, "degree")}
-          />
-        </div>
-        <div className="dates">
-          <span className="field-title">Start Date:</span>
-          <input type="date" value={startDate} onChange={(e) => updateField(e, "startDate")} />
-          <span className="field-title">End Date:</span>
-          <input type="date" value={endDate} onChange={(e) => updateField(e, "endDate")} />
-          <FaTrash onClick={() => deleteSchool(id)} className="trash" />
-        </div>
+      <div className="text flex-col">
+        <input
+          type="text"
+          placeholder="School Name"
+          value={school}
+          onChange={(e) => updateField(e, "school")}
+        />
+        <input
+          type="text"
+          placeholder="Degree Name"
+          value={degree}
+          onChange={(e) => updateField(e, "degree")}
+        />
+      </div>
+      <div className="dates flex-col">
+        <span className="field-title">Start Date:</span>
+        <input type="date" value={startDate} onChange={(e) => updateField(e, "startDate")} />
+        <span className="field-title">End Date:</span>
+        <input type="date" value={endDate} onChange={(e) => updateField(e, "endDate")} />
+        <button className="btn trash" onClick={() => deleteSchool(id)}>
+          Delete
+        </button>
       </div>
     </div>
   );
