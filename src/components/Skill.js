@@ -39,14 +39,13 @@ const Skill = ({ deleteSkill, skill }) => {
 
   return (
     <div>
-      <h2>Skills:</h2>
       <div className="skill">
         <input type="text" placeholder="Skill Name" value={name} onChange={updateSkill} />
-        <span className="rating">
+        <div className="rating">
           <input type="number" min="0" max="10" value={rating} onChange={updateRating} />
-          /10
-        </span>
-        <FaTrash onClick={() => deleteSkill(id)} />
+          <span>/ 10</span>
+          <FaTrash onClick={() => deleteSkill(id)} />
+        </div>
       </div>
     </div>
   );

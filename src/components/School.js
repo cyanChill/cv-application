@@ -44,9 +44,9 @@ const School = ({ deleteSchool, education }) => {
           <input type="date" value={startDate} onChange={(e) => updateField(e, "startDate")} />
           <span className="field-title">End Date:</span>
           <input type="date" value={endDate} onChange={(e) => updateField(e, "endDate")} />
+          <FaTrash onClick={() => deleteSchool(id)} className="trash" />
         </div>
       </div>
-      <FaTrash onClick={() => deleteSchool(id)} className="trash" />
     </div>
   );
 };

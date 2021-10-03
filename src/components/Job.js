@@ -38,22 +38,20 @@ const Job = ({ deleteJob, experience }) => {
             value={company}
             onChange={(e) => updateField(e, "company")}
           />
+          <textarea
+            className="description-field"
+            rows="2"
+            value={description}
+            onChange={(e) => updateField(e, "description")}
+          ></textarea>
         </div>
         <div className="dates">
           <span className="field-title">Start Date:</span>
           <input type="date" value={startDate} onChange={(e) => updateField(e, "startDate")} />
           <span className="field-title">End Date:</span>
           <input type="date" value={endDate} onChange={(e) => updateField(e, "endDate")} />
+          <FaTrash onClick={() => deleteJob(id)} />
         </div>
-      </div>
-      <div className="row no-responsiveness">
-        <textarea
-          className="description-field"
-          rows="2"
-          value={description}
-          onChange={(e) => updateField(e, "description")}
-        ></textarea>
-        <FaTrash onClick={() => deleteJob(id)} />
       </div>
     </div>
   );
