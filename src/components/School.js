@@ -58,9 +58,15 @@ const School = ({ deleteSchool, education }) => {
         {school}
         {degree ? ` - ${degree}` : ""}
       </h1>
-      <p className="duration">
-        {getTermDate(startDate)} - {getTermDate(endDate)}
-      </p>
+      {!startDate ? (
+        ""
+      ) : !endDate ? (
+        <p className="duration">{getTermDate(startDate)} -</p>
+      ) : (
+        <p className="duration">
+          {getTermDate(startDate)} - {getTermDate(endDate)}
+        </p>
+      )}
     </div>
   );
 };
