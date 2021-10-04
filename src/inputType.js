@@ -1,11 +1,6 @@
-import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaLinkedin, FaGithub } from "react-icons/fa";
+import { FaPhone, FaEnvelope, FaLinkedin, FaGithub } from "react-icons/fa";
 
 const Inputs = [
-  {
-    type: "location",
-    icon: <FaMapMarkerAlt />,
-    placeholder: "Enter your Location",
-  },
   {
     type: "phone",
     icon: <FaPhone />,
@@ -19,12 +14,12 @@ const Inputs = [
   {
     type: "linkedin",
     icon: <FaLinkedin />,
-    placeholder: "Enter your Linkedin URL",
+    placeholder: "Enter your Linkedin Username",
   },
   {
     type: "github",
     icon: <FaGithub />,
-    placeholder: "Enter your Github URL",
+    placeholder: "Enter your Github Username",
   },
 ];
 
