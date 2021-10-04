@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 
 import Sidebar from "./components/Sidebar";
 import MainContent from "./components/MainContent";
@@ -10,7 +10,14 @@ import { CVContext } from "./CVContext";
 import "./styles/App.style.css";
 
 function App() {
-  const { preview } = useContext(CVContext);
+  const { preview, isPrinting, setIsPrinting } = useContext(CVContext);
+
+  useEffect(() => {
+    if (isPrinting) {
+      window.print();
+      setIsPrinting(false);
+    }
+  }, [isPrinting, setIsPrinting]);
 
   return (
     <div className="app">
@@ -22,8 +29,15 @@ function App() {
           <MainContent />
         </div>
       )}
-      {preview ? <Download /> : ""}
-      <Preview />
+      {isPrinting ? (
+        ""
+      ) : preview ? (
+        <>
+          <Download /> <Preview />
+        </>
+      ) : (
+        <Preview />
+      )}
     </div>
   );
 }

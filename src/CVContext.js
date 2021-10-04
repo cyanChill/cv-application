@@ -4,6 +4,7 @@ import uniqid from "uniqid";
 export const CVContext = createContext();
 
 export const CVProvider = (props) => {
+  const [isPrinting, setIsPrinting] = useState(false);
   const [preview, setPreview] = useState(false);
   const [cvInfo, setCVInfo] = useState({
     name: "",
@@ -39,7 +40,9 @@ export const CVProvider = (props) => {
   });
 
   return (
-    <CVContext.Provider value={{ preview, setPreview, cvInfo, setCVInfo }}>
+    <CVContext.Provider
+      value={{ isPrinting, setIsPrinting, preview, setPreview, cvInfo, setCVInfo }}
+    >
       {props.children}
     </CVContext.Provider>
   );

@@ -1,15 +1,15 @@
 import { useContext } from "react";
+import { CVContext } from "../CVContext";
 
 import { FaRegSave } from "react-icons/fa";
-import { CVContext } from "../CVContext";
 import "../styles/OverlayButtons.style.css";
 
 const Download = () => {
-  const { preview, setPreview } = useContext(CVContext);
+  const { setIsPrinting } = useContext(CVContext);
 
   return (
     <div className="overlay download">
-      <FaRegSave className="overlay-icon" />
+      <FaRegSave className="overlay-icon" onClick={() => setIsPrinting(true)} />
     </div>
   );
 };
