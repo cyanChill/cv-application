@@ -21,12 +21,12 @@ body {
 
 .app {
   display: flex;
-  justify-content: center;
 }
 
 .app > * {
   padding: var(--application-padding);
   flex: 1;
+  margin: auto;
 }
 
 #cv-content {
@@ -35,8 +35,6 @@ body {
   max-width: var(--pdf-width);
   min-height: var(--pdf-height);
   display: flex;
-
-  background: green;
 }
 
 #cv-content #sidebar {
