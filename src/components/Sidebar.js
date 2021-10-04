@@ -3,6 +3,7 @@ import { CVContext } from "../CVContext";
 import Inputs from "../inputType";
 
 import "../styles/Sidebar.style.css";
+import primaryClrImg from "../images/printable_bkg_color.png";
 
 const Sidebar = () => {
   const { cvInfo } = useContext(CVContext);
@@ -55,10 +56,12 @@ const Sidebar = () => {
               <div key={skill.id} className="skill-field">
                 <p>{skill.name}</p>
                 <div className="rating-meter">
-                  <div
+                  <img
+                    src={primaryClrImg}
+                    alt="to simulate printing a background color"
                     className="rating-meter-fill"
                     style={{ width: `${skill.rating * 10}%` }}
-                  ></div>
+                  />
                 </div>
               </div>
             );
