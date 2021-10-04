@@ -9,6 +9,7 @@ export const CVProvider = (props) => {
   const [cvInfo, setCVInfo] = useState({
     name: "",
     title: "",
+    description: "",
     image: null,
     contact: { phone: "", email: "", linkedin: "", github: "" },
     skills: [

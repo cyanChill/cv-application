@@ -94,14 +94,13 @@ input[type="number"] {
 }
 
 /* Minor Labels */
-.name label,
-.title label {
+.user-info label {
   font-weight: bold;
   font-size: 1.15rem;
 }
 
-.name input,
-.title input {
+.user-info input,
+.user-info textarea {
   margin: 0.25rem 0;
 }
 

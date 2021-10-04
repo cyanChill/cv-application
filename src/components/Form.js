@@ -150,6 +150,16 @@ const Form = () => {
               onChange={(e) => setCVInfo({ ...cvInfo, title: e.target.value })}
             />
           </div>
+          <div className="description flex-col">
+            <label htmlFor="description">Description:</label>
+            <textarea
+              className="description-field"
+              placeholder="A description about yourself"
+              rows="2"
+              value={cvInfo.description}
+              onChange={(e) => setCVInfo({ ...cvInfo, description: e.target.value })}
+            ></textarea>
+          </div>
         </div>
         {/* Profile contact information */}
         <div className="contact-info flex-col">

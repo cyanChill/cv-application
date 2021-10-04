@@ -7,7 +7,7 @@ import "../styles/MainContent.style.css";
 
 const MainContent = () => {
   const {
-    cvInfo: { education, experience },
+    cvInfo: { education, experience, description },
   } = useContext(CVContext);
 
   const isEducationEmpty = education.every((obj) => {
@@ -21,6 +21,14 @@ const MainContent = () => {
 
   return (
     <div id="main-content">
+      {!description ? (
+        ""
+      ) : (
+        <div id="description">
+          <h2 className="section-title">Description</h2>
+          <p className="text">{description}</p>
+        </div>
+      )}
       {isExperienceEmpty ? (
         ""
       ) : (
