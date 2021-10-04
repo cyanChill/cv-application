@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useContext } from "react";
 
 import Sidebar from "./components/Sidebar";
 import MainContent from "./components/MainContent";
@@ -17,9 +17,10 @@ function App() {
       {!preview ? (
         <Form />
       ) : (
-        <>
-          <Sidebar /> <MainContent />
-        </>
+        <div id="cv-content">
+          <Sidebar />
+          <MainContent />
+        </div>
       )}
       {preview ? <Download /> : ""}
       <Preview />

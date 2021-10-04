@@ -1,4 +1,4 @@
-import { useContext, useRef } from "react";
+import { useContext, useRef, useEffect } from "react";
 
 import { CVContext } from "../CVContext";
 import uniqid from "uniqid";
@@ -29,6 +29,23 @@ const Form = () => {
         image: currFile[0],
       });
     }
+  };
+
+  const showProfileImg = () => {
+    if (cvInfo.image) {
+      previewImg.current.src = URL.createObjectURL(cvInfo.image);
+      previewImg.current.onload = () => URL.revokeObjectURL(previewImg.current.src);
+    }
+  };
+
+  const updateContact = (type, e) => {
+    setCVInfo({
+      ...cvInfo,
+      contact: {
+        ...cvInfo.contact,
+        [type]: e.target.value,
+      },
+    });
   };
 
   const addSkill = () => {
@@ -85,6 +102,10 @@ const Form = () => {
     });
   };
 
+  useEffect(() => {
+    showProfileImg();
+  }, []);
+
   return (
     <div className="container flex-col">
       <div className="row-1 flex-col">
@@ -139,8 +160,8 @@ const Form = () => {
                 type="text"
                 name={input.type}
                 placeholder={input.placeholder}
-                value={cvInfo[input.type]}
-                onChange={(e) => setCVInfo({ ...cvInfo, [input.type]: e.target.value })}
+                value={cvInfo.contact[input.type]}
+                onChange={(e) => updateContact([input.type], e)}
               />
             </div>
           ))}

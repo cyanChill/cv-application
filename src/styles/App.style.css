@@ -2,6 +2,9 @@
 
 :root {
   --application-padding: 1rem;
+  --pdf-width: 794px;
+  --pdf-height: 1123px;
+  --primary-color: #53b1b8;
 }
 
 *,
@@ -24,4 +27,28 @@ body {
 .app > * {
   padding: var(--application-padding);
   flex: 1;
+}
+
+#cv-content {
+  min-width: var(--pdf-width);
+  width: var(--pdf-width);
+  max-width: var(--pdf-width);
+  min-height: var(--pdf-height);
+  display: flex;
+
+  background: green;
+}
+
+#cv-content #sidebar {
+  width: calc(var(--pdf-width) / 3);
+}
+
+#cv-content #main-content {
+  width: calc(2 * var(--pdf-width) / 3);
+}
+
+/* Hide page title & date when printing*/
+@page {
+  size: auto;
+  margin: 0mm;
 }

@@ -4,7 +4,7 @@ import { CVContext } from "../CVContext";
 import { FaTrash } from "react-icons/fa";
 
 const Skill = ({ deleteSkill, skill }) => {
-  const { preview, cvInfo, setCVInfo } = useContext(CVContext);
+  const { cvInfo, setCVInfo } = useContext(CVContext);
   const { id, name, rating } = skill;
 
   const updateSkill = (e) => {

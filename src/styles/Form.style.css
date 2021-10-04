@@ -71,6 +71,10 @@ input[type="number"] {
   margin: 0.25rem 0;
 }
 
+.contact-input input {
+  width: clamp(13rem, 25vw, 15rem);
+}
+
 /* Profile Related */
 .profile-img {
   cursor: pointer;
@@ -111,7 +115,7 @@ input[type="number"] {
   margin: 0.25rem;
 }
 
-@media (min-width: 650px) {
+@media (min-width: 685px) {
   .row-1 {
     flex-direction: row;
   }
