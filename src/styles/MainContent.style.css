@@ -1,0 +1,36 @@
+#experience .section-title,
+#education .section-title {
+  position: relative;
+  padding: 0.5rem 0.75rem;
+  color: var(--primary-color);
+  border-bottom: 3px solid var(--primary-color);
+}
+
+#experience .job,
+#education .school {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+#experience .job .job-name,
+#education .school .school-name {
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+#experience .job .duration,
+#experience .job .description,
+#education .school .duration {
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+#experience .job .duration,
+#education .school .duration {
+  font-weight: 500;
+}
+
+#experience .job .description {
+  color: rgb(24, 24, 24);
+}
